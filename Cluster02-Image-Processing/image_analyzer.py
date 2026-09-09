@@ -2,7 +2,6 @@ from PIL import Image, ExifTags
 import os
 import sys
 
-
 def format_file_size(size):
     """Convert file size from bytes to KB or MB."""
     if size < 1024:
@@ -11,7 +10,6 @@ def format_file_size(size):
         return f"{size / 1024:.2f} KB"
     else:
         return f"{size / (1024 * 1024):.2f} MB"
-
 
 def get_exif_data(image):
     """Get EXIF metadata with readable tag names."""
@@ -27,7 +25,6 @@ def get_exif_data(image):
         readable_data[tag_name] = value
 
     return readable_data
-
 
 def analyze_image(image_path):
     """Analyze an image and display its metadata."""
@@ -104,7 +101,6 @@ def analyze_image(image_path):
     except (OSError, ValueError):
         print(f"Error: '{image_path}' is not a supported image file.")
 
-
 def main():
     """Main function of the program."""
 
@@ -119,7 +115,6 @@ def main():
     image_path = sys.argv[1]
 
     analyze_image(image_path)
-
 
 if __name__ == "__main__":
     main()
